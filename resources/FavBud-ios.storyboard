@@ -100,6 +100,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showPictures:" destination="ZJL-hF-PHS" eventType="touchUpInside" id="Gwz-qa-o39"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQn-au-FVZ">
                                 <constraints>
@@ -133,6 +136,18 @@
                                     <action selector="takePicture:" destination="ZJL-hF-PHS" eventType="touchUpInside" id="Alh-56-d1L"/>
                                 </connections>
                             </button>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ops-OM-yR4">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Uj6-n4-27Y"/>
+                                </constraints>
+                                <requiredContentSizeIdentifiers>
+                                    <string>ADBannerContentSizeLandscape</string>
+                                    <string>ADBannerContentSizePortrait</string>
+                                </requiredContentSizeIdentifiers>
+                                <connections>
+                                    <outlet property="delegate" destination="ZJL-hF-PHS" id="RCW-Tx-iKg"/>
+                                </connections>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -141,10 +156,13 @@
                             <constraint firstItem="Ehx-x5-qzD" firstAttribute="leading" secondItem="lOe-5M-CEG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="N2p-nA-dsu"/>
                             <constraint firstItem="Ehx-x5-qzD" firstAttribute="top" secondItem="lOe-5M-CEG" secondAttribute="top" constant="10" id="RsR-R7-YB2"/>
                             <constraint firstItem="YG1-D4-uSU" firstAttribute="trailing" secondItem="cfx-nZ-0Yu" secondAttribute="trailing" type="default" id="Wif-kp-tzT"/>
+                            <constraint firstAttribute="bottom" secondItem="Ops-OM-yR4" secondAttribute="bottom" constant="130" id="XOq-7l-jWL"/>
+                            <constraint firstItem="Ops-OM-yR4" firstAttribute="leading" secondItem="lOe-5M-CEG" secondAttribute="leading" type="default" id="baf-ea-jLS"/>
                             <constraint firstAttribute="bottom" secondItem="MBe-Qp-Jth" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="cFg-La-No4"/>
                             <constraint firstAttribute="bottom" secondItem="YG1-D4-uSU" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="dqE-to-bdY"/>
                             <constraint firstItem="cfx-nZ-0Yu" firstAttribute="leading" secondItem="lOe-5M-CEG" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gcD-qs-AuM"/>
                             <constraint firstItem="MBe-Qp-Jth" firstAttribute="leading" secondItem="kQn-au-FVZ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="paJ-0x-xTQ"/>
+                            <constraint firstItem="Ops-OM-yR4" firstAttribute="trailing" secondItem="lOe-5M-CEG" secondAttribute="trailing" type="default" id="tDy-te-FQk"/>
                             <constraint firstAttribute="bottom" secondItem="kQn-au-FVZ" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="vrH-JC-krU"/>
                             <constraint firstItem="cfx-nZ-0Yu" firstAttribute="top" secondItem="Ehx-x5-qzD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="wja-yz-MV2"/>
                             <constraint firstItem="YG1-D4-uSU" firstAttribute="leading" secondItem="MBe-Qp-Jth" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="wnS-Kg-Htt"/>
@@ -162,14 +180,14 @@
         <!--Pictures Controller-->
         <scene sceneID="qCa-MV-vR3">
             <objects>
-                <viewController id="Xhl-R5-AUJ" customClass="PicturesController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Picture" id="Xhl-R5-AUJ" customClass="PicturesController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lOG-oN-tXt">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="587-fO-pRh">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="396" id="6lT-XW-Qb6"/>
+                                    <constraint firstAttribute="height" constant="319" id="ui5-iw-quu"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSs-1g-sjM">
@@ -184,6 +202,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="previousImage:" destination="Xhl-R5-AUJ" eventType="touchUpInside" id="ucz-UN-Jt2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYM-RB-lR2">
                                 <constraints>
@@ -197,6 +218,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextImage:" destination="Xhl-R5-AUJ" eventType="touchUpInside" id="xAh-02-3H5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yi-zs-kjU">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -207,22 +231,29 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="goBack:" destination="Xhl-R5-AUJ" eventType="touchUpInside" id="nWV-R8-1CJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7Yi-zs-kjU" firstAttribute="leading" secondItem="lOG-oN-tXt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="8vU-ca-xT1"/>
                             <constraint firstAttribute="bottom" secondItem="7Yi-zs-kjU" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="DwM-RT-jPQ"/>
+                            <constraint firstAttribute="bottom" secondItem="dSs-1g-sjM" secondAttribute="bottom" constant="110" id="EdY-Dw-aEh"/>
                             <constraint firstItem="587-fO-pRh" firstAttribute="trailing" secondItem="lOG-oN-tXt" secondAttribute="trailing" type="default" id="FKh-Ah-As5"/>
                             <constraint firstItem="dSs-1g-sjM" firstAttribute="leading" secondItem="lOG-oN-tXt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="IvT-VV-KU0"/>
                             <constraint firstItem="yYM-RB-lR2" firstAttribute="baseline" secondItem="dSs-1g-sjM" secondAttribute="baseline" type="default" id="SD4-ZH-1s2"/>
                             <constraint firstItem="587-fO-pRh" firstAttribute="top" secondItem="lOG-oN-tXt" secondAttribute="top" type="default" id="UJa-e9-fJM"/>
+                            <constraint firstItem="yYM-RB-lR2" firstAttribute="top" secondItem="dSs-1g-sjM" secondAttribute="top" type="default" id="ZED-Pk-H6M"/>
                             <constraint firstAttribute="trailing" secondItem="yYM-RB-lR2" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="dbe-i6-DDx"/>
                             <constraint firstItem="587-fO-pRh" firstAttribute="leading" secondItem="lOG-oN-tXt" secondAttribute="leading" type="default" id="kq1-tF-yCB"/>
                             <constraint firstItem="7Yi-zs-kjU" firstAttribute="trailing" secondItem="dSs-1g-sjM" secondAttribute="trailing" type="default" id="qYr-Q7-5UK"/>
-                            <constraint firstItem="dSs-1g-sjM" firstAttribute="top" secondItem="587-fO-pRh" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rNX-Go-CuO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="picture" destination="587-fO-pRh" id="kZL-QE-i9L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Um9-XU-3tB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -325,11 +356,26 @@
                 <relationship kind="outlet" name="strain" candidateClass="UITableView"/>
             </relationships>
         </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PicturesController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PicturesController.h"/>
+            <relationships>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="action" name="load_image"/>
+                <relationship kind="action" name="nextImage:"/>
+                <relationship kind="action" name="previousImage:"/>
+                <relationship kind="action" name="viewDidAppear:"/>
+                <relationship kind="outlet" name="picture" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
         <class className="StrainController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StrainController.h"/>
             <relationships>
                 <relationship kind="action" name="goBack:"/>
                 <relationship kind="action" name="load_strain"/>
+                <relationship kind="action" name="showPictures:"/>
                 <relationship kind="action" name="takePicture:"/>
                 <relationship kind="action" name="viewDidAppear:"/>
                 <relationship kind="outlet" name="strain_description" candidateClass="UILabel"/>

@@ -28,15 +28,20 @@ class StrainController < UIViewController
     $app.switch_to_vc($app.load_vc("TakePic"))
   end
 
-  # def bannerViewDidLoadAd(banner)
-  #   NSLog("DidLoadAd")
-  #   banner.setHidden false
-  # end
 
-  # def bannerView(banner, didFailToReceiveAdWithError:error)
-  #   NSLog("DidFailToReceiveAdWithError")
-  #   banner.setHidden true
-  # end
+  def showPictures(sender)
+    $app.switch_to_vc($app.load_vc("Picture"))
+  end
+
+  def bannerViewDidLoadAd(banner)
+    NSLog("DidLoadAd")
+    banner.setHidden false
+  end
+
+  def bannerView(banner, didFailToReceiveAdWithError:error)
+    NSLog("DidFailToReceiveAdWithError")
+    banner.setHidden true
+  end
 
 
 end

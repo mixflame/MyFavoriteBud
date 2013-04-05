@@ -265,6 +265,21 @@
 @end
 
 
+@interface PicturesController: UIViewController
+
+@property IBOutlet UIImageView * picture;
+
+
+
+-(IBAction) viewDidAppear:(id) animated;
+-(IBAction) load_image;
+-(IBAction) previousImage:(id) sender;
+-(IBAction) nextImage:(id) sender;
+-(IBAction) goBack:(id) sender;
+
+@end
+
+
 @interface StrainController: UIViewController
 
 @property IBOutlet UILabel * strain_name;
@@ -276,6 +291,7 @@
 -(IBAction) load_strain;
 -(IBAction) goBack:(id) sender;
 -(IBAction) takePicture:(id) sender;
+-(IBAction) showPictures:(id) sender;
 
 @end
 

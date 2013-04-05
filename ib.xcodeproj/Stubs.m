@@ -103,6 +103,11 @@
 @end
 
 
+@implementation PicturesController
+
+@end
+
+
 @implementation StrainController
 
 @end
