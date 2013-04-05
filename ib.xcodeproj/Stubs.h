@@ -289,9 +289,11 @@
 
 -(IBAction) viewDidAppear:(id) animated;
 -(IBAction) load_strain;
+-(IBAction) openUrl:(id) sender;
 -(IBAction) goBack:(id) sender;
 -(IBAction) takePicture:(id) sender;
 -(IBAction) showPictures:(id) sender;
+-(IBAction) bannerViewDidLoadAd:(id) banner;
 
 @end
 

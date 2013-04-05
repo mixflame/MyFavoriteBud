@@ -2,7 +2,7 @@ class FavoriteBudController < UIViewController
   extend IB
   include BubbleWrap
 
-  attr_accessor :strains_array, :strains_hash
+  attr_accessor :strains_array, :strains_hash, :urls_hash
 
   outlet :strain, UITableView
 
@@ -17,9 +17,11 @@ class FavoriteBudController < UIViewController
       strains = JSON.parse(resp.body.to_str)
       @strains_array = []
       @strains_hash = {}
+      @urls_hash = {}
       strains.each do |strain|
         @strains_array << strain["Name"]
         @strains_hash[strain["Name"]] = strain["Key"]
+        @urls_hash[strain["Name"]] = strain["Url"]
       end
 
       @strain.reloadData
@@ -46,6 +48,7 @@ class FavoriteBudController < UIViewController
     # p @server_list_hash[indexPath.row]
     name = @strains_array[indexPath.row]
     $key = @strains_hash[name]
+    $url = @urls_hash[name]
     # port.text = @server_list_hash[indexPath.row][:port]
   end
 

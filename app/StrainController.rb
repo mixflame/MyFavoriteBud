@@ -20,6 +20,10 @@ class StrainController < UIViewController
     end
   end
 
+  def openUrl(sender)
+    App.open_url($url)
+  end
+
   def goBack(sender)
     $app.switch_to_vc($app.load_vc("FavBud"))
   end
@@ -27,7 +31,6 @@ class StrainController < UIViewController
   def takePicture(sender)
     $app.switch_to_vc($app.load_vc("TakePic"))
   end
-
 
   def showPictures(sender)
     $app.switch_to_vc($app.load_vc("Picture"))
