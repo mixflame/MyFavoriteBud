@@ -98,4 +98,19 @@
 @end
 
 
+@implementation FavoriteBudController
+
+@end
+
+
+@implementation StrainController
+
+@end
+
+
+@implementation TakePictureController
+
+@end
+
+
 

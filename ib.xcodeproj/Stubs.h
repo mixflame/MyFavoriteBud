@@ -252,4 +252,46 @@
 @end
 
 
+@interface FavoriteBudController: UIViewController
+
+@property IBOutlet UITableView * strain;
+
+
+
+-(IBAction) viewDidAppear:(id) animated;
+-(IBAction) load_strains;
+-(IBAction) viewStrain:(id) sender;
+
+@end
+
+
+@interface StrainController: UIViewController
+
+@property IBOutlet UILabel * strain_name;
+@property IBOutlet UILabel * strain_description;
+
+
+
+-(IBAction) viewDidAppear:(id) animated;
+-(IBAction) load_strain;
+-(IBAction) goBack:(id) sender;
+-(IBAction) takePicture:(id) sender;
+
+@end
+
+
+@interface TakePictureController: UIViewController
+
+@property IBOutlet UIImageView * picture_view;
+
+
+
+-(IBAction) viewDidAppear:(id) animated;
+-(IBAction) showCam:(id) sender;
+-(IBAction) uploadImage:(id) sender;
+-(IBAction) goBack:(id) sender;
+
+@end
+
+
 
