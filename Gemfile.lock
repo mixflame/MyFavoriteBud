@@ -1,0 +1,36 @@
+GIT
+  remote: git://github.com/rubymotion/BubbleWrap.git
+  revision: f0faa53596b60e7fdafaea7992468ecf7d98eccf
+  specs:
+    bubble-wrap (1.1.5)
+
+GIT
+  remote: git://github.com/yury/ib.git
+  revision: 3ad872972d85f3b11e2f73157eda3fd521b60207
+  specs:
+    ib (0.2.10)
+      thor (>= 0.15.4)
+      xcodeproj (>= 0.4.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (3.2.13)
+      i18n (= 0.6.1)
+      multi_json (~> 1.0)
+    colored (1.2)
+    i18n (0.6.1)
+    multi_json (1.7.2)
+    rake (10.0.4)
+    thor (0.18.1)
+    xcodeproj (0.5.4)
+      activesupport (~> 3.2.13)
+      colored (~> 1.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bubble-wrap!
+  ib!
+  rake
